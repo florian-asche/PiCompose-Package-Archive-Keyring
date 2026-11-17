@@ -49,3 +49,5 @@ The version of the package is the first entry of `debian/changelog`, which is pa
 ## License
 
 This project is released under the [MIT License](LICENSE).
+
+The key file is the public key that the PiCompose APT repository publishes.
