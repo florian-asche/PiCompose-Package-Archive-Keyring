@@ -1,0 +1,2 @@
+picompose-archive-keyring.gpg usr/share/keyrings/
+picompose.sources etc/apt/sources.list.d/

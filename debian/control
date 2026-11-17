@@ -1,0 +1,16 @@
+Source: picompose-archive-keyring
+Section: misc
+Priority: optional
+Maintainer: Florian Asche <github@florian-asche.de>
+Build-Depends: debhelper-compat (= 13)
+Standards-Version: 4.7.0
+Homepage: https://github.com/florian-asche/PiCompose-Package-Archive-Keyring
+Rules-Requires-Root: no
+
+Package: picompose-archive-keyring
+Architecture: all
+Depends: ${misc:Depends}
+Description: PiCompose APT repository signing key and source
+ Installs the GPG key that signs the PiCompose APT repository and the
+ apt source entry for the stable suite. Keeping the key in a package lets
+ it be renewed or replaced with a normal upgrade.

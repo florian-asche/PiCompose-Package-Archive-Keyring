@@ -1,0 +1,2 @@
+# The purpose of this package is to configure the PiCompose APT repository.
+picompose-archive-keyring: package-installs-apt-sources [etc/apt/sources.list.d/picompose.sources]
