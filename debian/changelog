@@ -1,5 +1,8 @@
-picompose-archive-keyring (0.0.0) trixie; urgency=medium
+picompose-archive-keyring (0.0.1) trixie; urgency=medium
 
-  * Placeholder. The CI replaces this file with an entry made from the release or pull request text.
+  * Count the version up from commit texts, build branches as artifacts and drop the test suite
+  * Test publishing to the APT repository
+  * Release by workflow: write debian/changelog, tag and publish
+  * Version from merged pull request labels, tags only for releases
 
- -- Florian Asche <github@florian-asche.de>  Tue, 17 Nov 2026 00:00:00 +0100
+ -- Florian Asche <github@florian-asche.de>  Tue, 17 Nov 2026 07:41:33 +0000
