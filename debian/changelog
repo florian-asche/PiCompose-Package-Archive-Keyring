@@ -1,3 +1,9 @@
+picompose-archive-keyring (0.0.2) trixie; urgency=medium
+
+  * Describe the key file (#1)
+
+ -- Florian Asche <github@florian-asche.de>  Tue, 17 Nov 2026 07:53:06 +0000
+
 picompose-archive-keyring (0.0.1) trixie; urgency=medium
 
   * Count the version up from commit texts, build branches as artifacts and drop the test suite
