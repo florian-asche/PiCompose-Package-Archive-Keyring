@@ -26,7 +26,7 @@ If you created `/etc/apt/sources.list.d/picompose.sources` yourself, dpkg asks w
 The file `picompose-archive-keyring.gpg` is the public key published by the repository at `https://florian-asche.github.io/PiCompose-Repository/picompose-archive-keyring.gpg`. When the signing key is extended or replaced:
 
 1. Download the new file over `picompose-archive-keyring.gpg` and merge it with a pull request.
-2. Run the workflow **Release** with a higher version.
+2. Merge the pull request with the label `minor` or `patch`, then run the workflow **Release**.
 3. Release it before the old key expires, so devices receive it by `apt upgrade` while they still trust the old one. While both keys are valid the repository can be signed with both, see the key documentation of the APT repository.
 
 ## Local build
@@ -39,11 +39,12 @@ lintian ../picompose-archive-keyring_*.deb
 
 ## Releases
 
-`debian/changelog` holds the releases and is part of the package. You do not edit it by hand, the release workflow writes it.
+The version of the package is the first entry of `debian/changelog`, which is part of the package. You do not edit it by hand, the workflows write it.
 
-- **Release:** Start the workflow **Release** (Actions, Release, Run workflow) and enter a version like `1.2.3` that is higher than the last release. It writes the changelog entry from the notes GitHub generates from the merged pull requests, commits `debian/changelog` to `main`, tags that commit `v<version>`, creates the GitHub release and builds and publishes the package to the suite `trixie`. A release created by hand in the GitHub UI is not published.
-- **Push to `main`:** The package gets the version `<last release>+git<timestamp>.<sha>` and is published to the suite `trixie-nightly`. The changelog entry of this build, made from the title and description of the pull request, is only part of the package. Every build overwrites the previous one.
-- **Any other branch:** `<last release>+dev<timestamp>.<sha>`. Nothing is published, the packages are kept as workflow artifacts for 14 days. Use a branch per change to try it on a device.
+1. **Pull request:** Every pull request needs exactly one of the labels `major`, `minor` and `patch`. It decides how the version is raised when it is merged. Tick one box under "Version bump" in the description or set the label by hand. The check "Version label" fails until there is exactly one.
+2. **Merge to `main`:** The workflow raises the version in `debian/changelog` by the highest label of the merged pull requests, adds the titles of the pull requests as changelog entry, commits `debian/changelog` to `main` (the commit "Version 1.3.0"), builds exactly that version and publishes it to the suite `trixie-nightly`. No tag is created.
+3. **Release:** Start the workflow **Release** (Actions, Release, Run workflow). It tags the newest commit of `main` with `v<version>` of `debian/changelog`, creates the GitHub release and publishes that version to the suite `trixie`. Tags only exist for releases. A release created by hand in the GitHub UI is not published.
+4. **Any other branch:** The package gets the version `<version>+dev<timestamp>.<sha>`. Nothing is published, the packages are kept as workflow artifacts for 14 days. Use a branch per change to try it on a device.
 
 ## License
 
