@@ -9,8 +9,9 @@ permissions:
 jobs:
   release:
     name: Release
-    uses: florian-asche/PiCompose-Repository/.github/workflows/package-release.yml@main
+    uses: florian-asche/PiCompose-Repository/.github/workflows/package-release.yml@v1.0.0
     permissions:
       contents: write
+      actions: read
     secrets:
       hub-token: ${{ secrets.HUB_DISPATCH_TOKEN }}
