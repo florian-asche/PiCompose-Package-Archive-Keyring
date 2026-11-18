@@ -1,3 +1,9 @@
+picompose-archive-keyring (0.0.3) trixie; urgency=medium
+
+  * Call the shared workflows with a version and add the status badges (#2)
+
+ -- Florian Asche <github@florian-asche.de>  Wed, 18 Nov 2026 01:23:26 +0000
+
 picompose-archive-keyring (0.0.2) trixie; urgency=medium
 
   * Describe the key file (#1)
