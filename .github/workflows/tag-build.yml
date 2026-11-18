@@ -1,0 +1,19 @@
+name: Build and publish a version
+
+on:
+  workflow_dispatch:
+  release:
+    types: [released]
+
+permissions:
+  contents: read
+
+jobs:
+  package:
+    name: Package
+    uses: florian-asche/PiCompose-Repository/.github/workflows/package-tag-build.yml@v1.0.0
+    permissions:
+      contents: write
+      actions: read
+    secrets:
+      hub-token: ${{ secrets.HUB_DISPATCH_TOKEN }}
