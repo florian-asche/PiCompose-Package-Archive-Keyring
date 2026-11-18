@@ -2,8 +2,8 @@ name: Build and publish
 
 on:
   push:
-    branches:
-      - '**'
+    branches-ignore:
+      - main
   pull_request:
 
 permissions:
@@ -21,5 +21,3 @@ jobs:
     permissions:
       contents: write
       actions: read
-    secrets:
-      hub-token: ${{ secrets.HUB_DISPATCH_TOKEN }}
