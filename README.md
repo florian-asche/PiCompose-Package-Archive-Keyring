@@ -1,5 +1,7 @@
 # PiCompose-Package-Archive-Keyring
 
+[![Build](https://github.com/florian-asche/PiCompose-Package-Archive-Keyring/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/florian-asche/PiCompose-Package-Archive-Keyring/actions/workflows/build.yml) [![GitHub Release Version](https://img.shields.io/github/v/release/florian-asche/PiCompose-Package-Archive-Keyring?label=version)](https://github.com/florian-asche/PiCompose-Package-Archive-Keyring/releases) [![GitHub License](https://img.shields.io/github/license/florian-asche/PiCompose-Package-Archive-Keyring)](https://github.com/florian-asche/PiCompose-Package-Archive-Keyring/blob/main/LICENSE)
+
 Package `picompose-archive-keyring` for the [PiCompose APT repository](https://github.com/florian-asche/PiCompose-Repository). It installs the GPG key that signs the repository and the apt source entry for the stable suite `trixie`.
 
 Because the key is a package, it can be renewed or replaced with a normal `apt upgrade`. Without it, every device would need the new key copied by hand.
