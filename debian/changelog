@@ -1,3 +1,9 @@
+picompose-archive-keyring (0.0.5) trixie; urgency=medium
+
+  * Check for updates of the GitHub Actions daily (#4)
+
+ -- Florian Asche <github@florian-asche.de>  Fri, 20 Nov 2026 20:10:33 +0000
+
 picompose-archive-keyring (0.0.4) trixie; urgency=medium
 
   * Switch to the version flow with pre-releases and tag builds (#3)
